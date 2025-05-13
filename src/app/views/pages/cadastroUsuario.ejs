@@ -1,0 +1,21 @@
+<h1>Cadastro de Usuário</h1>
+
+<% if (falha) { %>
+    <p style="color:red;"><%= falha %></p>
+<% } %>
+
+<form action="/cadastro" method="POST">
+    <input type="text" name="nome" placeholder="Nome" value="<%= valores.nome || '' %>"><br>
+    <input type="email" name="email" placeholder="E-mail" value="<%= valores.email || '' %>"><br>
+    <input type="password" name="senha" placeholder="Senha"><br>
+    <input type="password" name="c_senha" placeholder="Confirme a Senha"><br>
+    <button type="submit">Cadastrar</button>
+</form>
+
+<% if (listaErros) { %>
+    <ul style="color:red;">
+        <% listaErros.forEach(erro => { %>
+            <li><%= erro.msg %></li>
+        <% }) %>
+    </ul>
+<% } %>

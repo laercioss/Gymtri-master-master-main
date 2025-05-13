@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Profissional</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1>Cadastro de Profissional</h1>
+
+    <% if (falha) { %>
+        <div class="erro"><%= falha %></div>
+    <% } %>
+
+    <% if (listaErros) { %>
+        <ul class="erros">
+            <% listaErros.forEach(erro => { %>
+                <li><%= erro.msg %></li>
+            <% }) %>
+        </ul>
+    <% } %>
+
+    <form action="/profissional/cadastro" method="POST">
+        <label>Nome:</label>
+        <input type="text" name="nome" value="<%= valores?.nome || '' %>"><br>
+
+        <label>E-mail:</label>
+        <input type="email" name="email" value="<%= valores?.email || '' %>"><br>
+
+        <label>Senha:</label>
+        <input type="password" name="senha"><br>
+
+        <label>Confirmar Senha:</label>
+        <input type="password" name="c-senha"><br>
+
+        <button type="submit">Cadastrar</button>
+    </form>
+</body>
+</html>

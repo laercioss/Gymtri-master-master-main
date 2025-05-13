@@ -1,0 +1,15 @@
+<%- include('../../partials/head') %>
+<%- include('../../partials/navbar') %>
+
+<section class="admin-dashboard">
+    <h1>Bem-vindo, <%= usuario.nome %>!</h1>
+    <p>Você está no painel de administração da plataforma Fitness.</p>
+
+    <ul>
+        <li><a href="/admin/usuarios">Gerenciar Usuários</a></li>
+        <li><a href="/admin/profissionais">Gerenciar Profissionais</a></li>
+        <li><a href="/admin/academias">Gerenciar Academias</a></li>
+    </ul>
+</section>
+
+<%- include('../../partials/footer') %>
